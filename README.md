@@ -1,5 +1,6 @@
 # Auto Statistical Analysis
 
+<<<<<<< HEAD
 ## Overview:
 Applying my understanding of statistics and hypothesis testing to analyze a series of datasets from the automotive industry. This analysis includes visualizations, statistical tests, and interpretation of the results. All statistical analysis and visualizations are written in the R programming language.
 
@@ -45,3 +46,9 @@ Write a short description of a statistical study that can quantify how the Mecha
 -What statistical test would you use to test the hypothesis? And why?
 
 -What data is needed to run the statistical test?
+=======
+Part 1: Linear Regression to Predict MPG
+Part 2: Summary Statistics on Suspension Coils
+Part 3: T-Test on Suspension Coils
+Part 4: Design a Study Comparing the MechaCar to the Competition
+>>>>>>> 26e2fd23089186174fb63cc62d981b249f96acef
