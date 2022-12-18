@@ -5,7 +5,7 @@ Applying my understanding of statistics and hypothesis testing to analyze a seri
 
 ---
 ### Resources:
-* Source Code: [Challenge Script](MechaCarChallenge.RScript)
+* Source Code: [Challenge Script](MechaCarChallenge.R)
 * Source Data: [MechaCar MPG](https://github.com/caseygomez/MechaCar_Statistical_Analysis/blob/main/MechaCar_mpg.csv), [Suspension Coil](https://github.com/caseygomez/MechaCar_Statistical_Analysis/blob/main/Suspension_Coil.csv)
 * Software: [R](https://www.r-project.org/), [Tidyverse](https://www.tidyverse.org/)
 
