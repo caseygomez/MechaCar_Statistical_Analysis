@@ -53,6 +53,7 @@ Residual standard error: 8.774 on 44 degrees of freedom
 Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
 F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
+
 #Scatterplots:
 > plt <- ggplot(mechaCar_table,aes(x=mpg,y=vehicle_length)) #import dataset into ggplot2 mpg by vehicle_length 
 > plt + geom_point(size=2) + labs(x="Fuel Efficieny (MPG)",y="Vehicle Length") #add scatter plot
@@ -68,16 +69,6 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
 > plt <- ggplot(mechaCar_table,aes(x=mpg,y=AWD)) #import dataset into ggplot2 mpg by AWD 
 > plt + geom_point(size=2) + labs(x="Fuel Efficieny (MPG)",y="All Wheel Drive") #add scatter plot
-
-
-#The input data is numerical and continuous.
-#The input data should follow a linear pattern.
-#There is variability in the independent x variable. This means that there must be more than one observation in the x-axis and they must be different values.
-#The residual error (the distance from each data point to the line) should be normally distributed.
-
-#In addition, the p-value of our linear regression analysis is 5.35 x 10-11, which is much smaller than our assumed significance level(alpha) 
-#of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our 
-#linear model is not zero.
  
 #For comparision summarize linear model mpg/vehicle_weight 
 > summary(lm(mpg~vehicle_weight,mechaCar_table))

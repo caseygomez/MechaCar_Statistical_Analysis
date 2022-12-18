@@ -6,7 +6,7 @@ Applying my understanding of statistics and hypothesis testing to analyze a seri
 ---
 ### Resources:
 * Source Code: [Challenge Script](MechaCarChallenge.R)
-* Source Data: [MechaCar MPG](https://github.com/caseygomez/MechaCar_Statistical_Analysis/blob/main/MechaCar_mpg.csv), [Suspension Coil](https://github.com/caseygomez/MechaCar_Statistical_Analysis/blob/main/Suspension_Coil.csv)
+* Source Data: [MechaCar MPG](MechaCar_mpg.csv), [Suspension Coil](Suspension_Coil.csv)
 * Software: [R](https://www.r-project.org/), [Tidyverse](https://www.tidyverse.org/)
 
 ---
@@ -45,7 +45,13 @@ Breaking down the data further and grouping by manufacturing lot we see Lot 3 ha
 
 ---
 ### T-Tests on Suspension Coils:
--Briefly summarize your interpretation and findings for the t-test results.
+
+![Total t-test](images/ttest.png)
+![Lot 1 t-test](images/lot1.png)
+![Lot 2 t-test](images/lot2.png)
+![Lot 3 t-test](images/lot3.png)
+
+The t-test results show Lot 3's mean PSI of 1496.14 is statistically significant with a p-value of .04. We reject the null hypothesis, the PSI is not equal to 1500. This is in alignment with our previous findings of high variance in Lot 3's PSI. 
 
 ---
 ### Study Design: MechaCar vs Competition:
