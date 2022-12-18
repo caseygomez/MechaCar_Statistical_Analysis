@@ -188,13 +188,13 @@ F-statistic: 0.9831 on 1 and 48 DF,  p-value: 0.3264
 
 
 #Deliverable 2: 
-# Read in Suspension_Coil data
+# Read in Suspension_Coil data as coil_table.
 >coil_table <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
 
-#The suspension coil’s PSI continuous variable across all manufacturing lots.
+#Summarize the suspension coil’s PSI continuous variable across all manufacturing lots as total_summary.
 >total_summary <- coil_table %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
 
-#The following PSI metrics for each lot: mean, median, variance, and standard deviation.
+#Summarize the following PSI metrics for each lot: mean, median, variance, and standard deviation.
 >lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep') 
 
 
