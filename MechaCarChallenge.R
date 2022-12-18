@@ -1,7 +1,11 @@
-> library(dplyr) #library
-> mechaCar_table <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F) #read in data
+ #Load dplyr package via library() function 
+>library(dplyr) 
 
-> head(mechaCar_table) #examine data 
+#Read in the MechaCar Data 
+> mechaCar_table <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F) 
+
+#Examine data 
+> head(mechaCar_table)  
   vehicle_length vehicle_weight spoiler_angle ground_clearance AWD      mpg
 1       14.69710       6407.946      48.78998         14.64098   1 49.04918
 2       12.53421       5182.081      90.00000         14.36668   1 36.76606
@@ -10,7 +14,8 @@
 5       15.44998       3772.667      26.12816         15.10396   1 63.82457
 6       14.45357       7286.595      30.58568         13.10695   0 48.54268
 
->lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mechaCar_table) #linear regression on mechaCar data 
+#Linear Regression on MechaCar Data (mpg ~ five other columns)
+>lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mechaCar_table) 
 
 Call:
 lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
@@ -22,8 +27,8 @@ Coefficients:
              AWD  
       -3.411e+00  
 
-
-> summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mechaCar_table)) #summary function to find p-value and rsquared 
+#Summary function to find p-value and multiple r-squared 
+> summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mechaCar_table)) 
 
 Call:
 lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
@@ -48,7 +53,7 @@ Residual standard error: 8.774 on 44 degrees of freedom
 Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
 F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
-Scatterplots:
+#Scatterplots:
 > plt <- ggplot(mechaCar_table,aes(x=mpg,y=vehicle_length)) #import dataset into ggplot2 mpg by vehicle_length 
 > plt + geom_point(size=2) + labs(x="Fuel Efficieny (MPG)",y="Vehicle Length") #add scatter plot
 
@@ -65,17 +70,17 @@ Scatterplots:
 > plt + geom_point(size=2) + labs(x="Fuel Efficieny (MPG)",y="All Wheel Drive") #add scatter plot
 
 
-The input data is numerical and continuous.
-The input data should follow a linear pattern.
-There is variability in the independent x variable. This means that there must be more than one observation in the x-axis and they must be different values.
-The residual error (the distance from each data point to the line) should be normally distributed.
+#The input data is numerical and continuous.
+#The input data should follow a linear pattern.
+#There is variability in the independent x variable. This means that there must be more than one observation in the x-axis and they must be different values.
+#The residual error (the distance from each data point to the line) should be normally distributed.
 
-In addition, the p-value of our linear regression analysis is 5.35 x 10-11, which is much smaller than our assumed significance level(alpha) 
-of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our 
-linear model is not zero.
+#In addition, the p-value of our linear regression analysis is 5.35 x 10-11, which is much smaller than our assumed significance level(alpha) 
+#of 0.05%. Therefore, we can state that there is sufficient evidence to reject our null hypothesis, which means that the slope of our 
+#linear model is not zero.
  
-
-> summary(lm(mpg~vehicle_weight,mechaCar_table)) #summarize linear model mpg/vehicle_weight
+#For comparision summarize linear model mpg/vehicle_weight 
+> summary(lm(mpg~vehicle_weight,mechaCar_table))
 
 Call:
 lm(formula = mpg ~ vehicle_weight, data = mechaCar_table)
@@ -97,8 +102,8 @@ F-statistic: 0.398 on 1 and 48 DF,  p-value: 0.5311
 
 
 
-
-summary(lm(formula = mpg ~ vehicle_length, data = mechaCar_table)) #summarize linear model mpg/vehicle_length
+#For comparision summarize linear model mpg/vehicle_length
+>summary(lm(formula = mpg ~ vehicle_length, data = mechaCar_table)) 
 
 Call:
 lm(formula = mpg ~ vehicle_length, data = mechaCar_table)
@@ -118,8 +123,8 @@ Residual standard error: 12.47 on 48 degrees of freedom
 Multiple R-squared:  0.3715,	Adjusted R-squared:  0.3584 
 F-statistic: 28.37 on 1 and 48 DF,  p-value: 2.632e-06
 
- 
-> summary(lm(formula = mpg ~ ground_clearance, data = mechaCar_table))#summarize linear model mpg/ground_clearance
+#For comparision summarize linear model mpg/ground_clearance 
+> summary(lm(formula = mpg ~ ground_clearance, data = mechaCar_table))
 
 Call:
 lm(formula = mpg ~ ground_clearance, data = mechaCar_table)
@@ -139,7 +144,8 @@ Residual standard error: 14.86 on 48 degrees of freedom
 Multiple R-squared:  0.1081,	Adjusted R-squared:  0.08949 
 F-statistic: 5.816 on 1 and 48 DF,  p-value: 0.01975
 
- summary(lm(formula = mpg ~ spoiler_angle, data = mechaCar_table)) #summarize linear model mpg/spoiler_angle
+#For comparision summarize linear model mpg/spoiler_angle 
+>summary(lm(formula = mpg ~ spoiler_angle, data = mechaCar_table)) 
 
 Call:
 lm(formula = mpg ~ spoiler_angle, data = mechaCar_table)
@@ -159,7 +165,8 @@ Residual standard error: 15.73 on 48 degrees of freedom
 Multiple R-squared:  0.0004343,	Adjusted R-squared:  -0.02039 
 F-statistic: 0.02086 on 1 and 48 DF,  p-value: 0.8858
 
-> summary(lm(formula = mpg ~ AWD, data = mechaCar_table)) #summarize linear model mpg/AWD
+#Summarize linear model mpg/AWD
+> summary(lm(formula = mpg ~ AWD, data = mechaCar_table))
 
 Call:
 lm(formula = mpg ~ AWD, data = mechaCar_table)
@@ -181,18 +188,20 @@ F-statistic: 0.9831 on 1 and 48 DF,  p-value: 0.3264
 
 
 #Deliverable 2: 
-# import csv and read as a table
-coil_table <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+# Read in Suspension_Coil data
+>coil_table <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+
 #The suspension coil’s PSI continuous variable across all manufacturing lots.
-total_summary <- coil_table %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+>total_summary <- coil_table %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI), .groups = 'keep')
+
 #The following PSI metrics for each lot: mean, median, variance, and standard deviation.
-lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep') 
+>lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI),Median = median(PSI), Variance = var(PSI), SD = sd(PSI) , .groups = 'keep') 
 
 
 
 #Deliverable 3:
 # t-test for all the lots, pop mu = 1500 psi
-t.test(coil_table$PSI,mu=mean(coil_table$PSI))
+>t.test(coil_table$PSI,mu=mean(coil_table$PSI))
 
 	One Sample t-test
 
@@ -206,7 +215,7 @@ mean of x
   1498.78 
 
 # t-test for lot 1
-t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot1"),mu=mean(coil_table$PSI))
+>t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot1"),mu=mean(coil_table$PSI))
 
 	One Sample t-test
 
@@ -220,7 +229,7 @@ mean of x
      1500 
 
 # t-test for lot 2
-t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot2"),mu=mean(coil_table$PSI))
+>t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot2"),mu=mean(coil_table$PSI))
 
     One Sample t-test
 
@@ -234,7 +243,7 @@ mean of x
    1500.2 
 
 # t-test for lot 3
-t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot3"),mu=mean(coil_table$PSI))
+>t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot3"),mu=mean(coil_table$PSI))
 	
     One Sample t-test
 
