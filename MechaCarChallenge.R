@@ -201,55 +201,59 @@ F-statistic: 0.9831 on 1 and 48 DF,  p-value: 0.3264
 
 #Deliverable 3:
 # t-test for all the lots, pop mu = 1500 psi
->t.test(coil_table$PSI,mu=mean(coil_table$PSI))
+> all_psi = coil_table['PSI']
+> t.test(all_psi[['PSI']], mu=1500)
 
 	One Sample t-test
 
-data:  coil_table$PSI
-t = 0, df = 149, p-value = 1
-alternative hypothesis: true mean is not equal to 1498.78
+data:  all_psi[["PSI"]]
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
  1497.507 1500.053
 sample estimates:
 mean of x 
   1498.78 
 
-# t-test for lot 1
->t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot1"),mu=mean(coil_table$PSI))
+# t-test for lot 1, pop mu = 1500 psi
+> lot1_psi = subset(coil_table, Manufacturing_Lot == "Lot1")
+> t.test(lot1_psi[['PSI']], mu=1500)
 
 	One Sample t-test
 
-data:  subset(coil_table$PSI, coil_table$Manufacturing_Lot == "Lot1")
-t = 8.7161, df = 49, p-value = 1.568e-11
-alternative hypothesis: true mean is not equal to 1498.78
+data:  lot1_psi[["PSI"]]
+t = 0, df = 49, p-value = 1
+alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
  1499.719 1500.281
 sample estimates:
 mean of x 
      1500 
 
-# t-test for lot 2
->t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot2"),mu=mean(coil_table$PSI))
+# t-test for lot 2, pop mu = 1500 psi
+> lot2_psi = subset(coil_table, Manufacturing_Lot == "Lot2")
+> t.test(lot2_psi[['PSI']], mu=1500)
 
-    One Sample t-test
+	One Sample t-test
 
-data:  subset(coil_table$PSI, coil_table$Manufacturing_Lot == "Lot2")
-t = 3.6739, df = 49, p-value = 0.0005911
-alternative hypothesis: true mean is not equal to 1498.78
+data:  lot2_psi[["PSI"]]
+t = 0.51745, df = 49, p-value = 0.6072
+alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
  1499.423 1500.977
 sample estimates:
 mean of x 
    1500.2 
 
-# t-test for lot 3
->t.test(subset(coil_table$PSI,coil_table$Manufacturing_Lot == "Lot3"),mu=mean(coil_table$PSI))
-	
-    One Sample t-test
+# t-test for lot 3, pop mu = 1500 psi
+>lot3_psi = subset(coil_table, Manufacturing_Lot == "Lot3")
+> t.test(lot3_psi[['PSI']], mu=1500)
 
-data:  subset(coil_table$PSI, coil_table$Manufacturing_Lot == "Lot3")
-t = -1.4305, df = 49, p-value = 0.1589
-alternative hypothesis: true mean is not equal to 1498.78
+	One Sample t-test
+
+data:  lot3_psi[["PSI"]]
+t = -2.0916, df = 49, p-value = 0.04168
+alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
  1492.431 1499.849
 sample estimates:
