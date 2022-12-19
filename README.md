@@ -55,14 +55,14 @@ The t-test results show Lot 3's mean PSI of 1496.14 is statistically significant
 
 ---
 ### Study Design: MechaCar vs Competition:
-As a consumer, when purchasing a car the two most important factors for are safety and price. For this study I will compare MechaCAr's safety rating and price vs the competition's. The safety rating and pricing information for new and used cars can be found on the [Consumer Reports](https://www.consumerreports.org/cars/?EXTKEY=SG72C02&ds_rl=1247060&gclid=CjwKCAiAkfucBhBBEiwAFjbkr6vCRIlgaW9_uZ5U5CRDYY41Wqbi6ZQ_A2XpYx7YFipj5Ifw_c90LRoCJIIQAvD_BwE&gclsrc=aw.ds) site.
+As a consumer, when purchasing a car the two most important factors are safety and price. For this study I will compare MechaCAr's safety rating and price vs the competition's. The safety rating for cars can be found on the [NHTSA](https://www.nhtsa.gov/ratings) site.
 
 The null hypothesis states the safety rating does not effect the price of a car. 
 
-The alternative hypothesis is that safety rating does increase the price of the car. 
+The alternative hypothesis states that safety rating does increase the price of the car. 
 
 I will test this hypothesis with the chi-squared test, creating categorical ranges for price (low-end, mid-range, high-end) and comparing that to the categorical safety ratings (A,B,C,D,F).  
 
-I will need the dataset of available MechaCars, that data will include car make, model, year and price. I will add a column for safety rating and assign the letter based on the Consumer Reports list. Additionally I will make the pricing range column and assign based on predetermined ranges. The competition dataset will include the same information. 
+I will need the dataset of available MechaCars, that data will include car make, model, year and price. I will add a column for safety rating and assign the letter based on the NHTSA report. Additionally I will make the pricing range column and assign based on ranges. The competition dataset will include the same information. 
 
 If the p-value is less than .05 I will reject the null hypothesis, the safety rating does effect the price of the car.  
