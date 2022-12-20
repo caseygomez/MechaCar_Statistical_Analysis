@@ -23,7 +23,7 @@ Applying my understanding of statistics and hypothesis testing to analyze a seri
 
 To better predict fuel efficiency (mpg), the dependent variable, I applied the multiple linear regression model with other variables of interest. These variables included vehicle length, vehicle weight, spoiler angle, ground clearance and AWD. Two variables that provided a non-random amount of variance to the mpg values in the dataset are:
 
-   - Vehicle length, p-value: 2.60e-12
+   - Vehicle Length, p-value: 2.60e-12
    - Ground Clearance, p-value: 5.21e-08
 
 Both have statistically significant p-values, less than the alpha .05 established prior to performing the linear regression. 
